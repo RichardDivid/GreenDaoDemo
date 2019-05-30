@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插入"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary" />
+
+
+ <TextView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除"
+     android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary" />
+
+
+ <TextView
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更新"
+     android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary" />
+
+
+ <TextView
+        android:id="@+id/query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查找"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary" />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+
+
+
+</LinearLayout>

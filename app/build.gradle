@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.booyue.greendaodemo"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+greendao {
+    //如果表更新 schemaVersion版本加1，创建临时表（结构与上一版本的表结构相同），将旧数据移到临时表中，删除旧版本的表，创建新版本的表，将临时表中的数据转移到新表中，最后再删除临时表
+    schemaVersion 1
+    daoPackage 'com.booyue.core.db.greendao.gen'
+    targetGenDir 'src/main/java'
+//    设置为true以自动生成单元测试
+//    generateTests false
+    //targetGenDirTest：设置生成单元测试目录
+    //generateTests：设置自动生成单元测试用例
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'org.greenrobot:greendao:3.2.0' // add library
+    implementation 'org.greenrobot:greendao-generator:3.2.0'
+}
